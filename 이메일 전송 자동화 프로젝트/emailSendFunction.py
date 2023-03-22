@@ -1,8 +1,5 @@
 import os
 import smtplib
-import sys
-reload(sys)
-sys.setdefaultencoding('utf8')
 
 # 이메일 메시지에 다양한 형식을 중첩하여 담기 위한 객체
 from email.mime.multipart import MIMEMultipart
@@ -23,7 +20,7 @@ from email.mime.audio import MIMEAudio
 # MIMEBase(<메인 타입>, <서브 타입>)
 from email.mime.base import MIMEBase
 
-def send_mail(smtp_info, msg):
+def send_email(smtp_info, msg):
     with smtplib.SMTP(smtp_info['smtp_server'], smtp_info['smtp_port']) as server:
         # TLS 보안 연결
         server.starttls()
