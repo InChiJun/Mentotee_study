@@ -64,8 +64,8 @@ def make_multimsg(msg_dict):
     return multi
 
 smtp_info = dict({'smtp_server' : 'smtp.naver.com', # SMTP 서버 주소
-                  'smtp_user_id' : '<송신자(sender) 메일 계정>@naver.com',
-                  'smtp_user_pw' : '<송신자(sender) 메일 패스워드>',
+                  'smtp_user_id' : 'clwnssla@naver.com',
+                  'smtp_user_pw' : 'rla1tjd!',
                   'smtp_port' : 587}) # SMTP 서버 포트
 
 msg_dict = {
@@ -81,8 +81,8 @@ msg_dict = {
 ############################
 title = '첨부파일이 있는 이메일입니다.'
 content = '메일 내용입니다.'
-sender = '<송신자(sender) 메일 계정>@naver.com'
-receiver = '<수신자(receiver) 메일 주소@naver.com>'
+sender = 'clwnssla@naver.com'
+receiver = 'clwnssla@naver.com>', 'clwnssla@naver.com>'
 
 # 이메일 내용
 msg = MIMEText(_text = content, _charset = 'utf-8')
