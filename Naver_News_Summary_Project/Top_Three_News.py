@@ -23,7 +23,7 @@ for sid in ['100']: #, '101', '102']:
     soup = get_soup_obj(sec_url)
 
     # 해당 분야 상위 뉴스 세 개 가져오기
-    lis3 = soup.find('ul', class_='type06_headline').find_all('li', limit=3)
+    lis3 = soup.find('ul', class_='cluster').find_all('li', limit=3)
     for li in lis3:
         # title : 뉴스 제목, news_url : 뉴스 URL, image_url : 이미지 URL
         news_info = {
