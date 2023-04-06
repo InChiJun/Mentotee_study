@@ -30,7 +30,14 @@ try:
     for item in items['item']:
         # 기온
         if item['category'] == 'TMP':
-            weather['tmp']
-    print(items)
+            weather['tmp'] = item['fcstValue']
+
+        # 강수상태
+        if item['category'] == 'PTY':
+            weather['code'] == item['fcstValue']
+            weather['state'] = pty_code[item['fcstValue']]
 except:
     print('날씨 정보 요청 실패 : ', res.text)
+
+data['weather'] = weather
+print(data['weather'])
