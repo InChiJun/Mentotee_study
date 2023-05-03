@@ -4,6 +4,7 @@
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/django_default/venv" />
       <excludeFolder url="file://$MODULE_DIR$/Django_practice/polls/venv" />
+      <excludeFolder url="file://$MODULE_DIR$/Django_practice/Bookmark/venv" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
