@@ -13,6 +13,7 @@ class BookmarkUpdateView(UpdateView):
     model = Bookmark
     fields = ['site_name', 'url']
     template_name_suffix = '_update'
+    success_url = reverse_lazy('list') # 요청 성공하거나, 다음 페이지로 넘어갈 때 템플릿 지정
 
 class BookmarkDetailView(DetailView):
     model = Bookmark
