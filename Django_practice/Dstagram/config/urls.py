@@ -1,7 +1,7 @@
 from django.contrib import admin
-from django.urls import path
-from django.views.generic.detail import DetailView
+from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('photo.urls')),
 ]
