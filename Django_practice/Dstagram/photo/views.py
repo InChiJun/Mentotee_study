@@ -2,6 +2,17 @@ from django.shortcuts import render
 from .models import Photo
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.shortcuts import redirect
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+
+@login_required
+def photo_list(request):
+
+class PhotoUploadView(LoginRequiredMixin, CreateView):
+
+class PhotoDeleteView(LoginRequiredMixin, DeleteView):
+
+class PhotoUpdateView(LoginRequiredMixin, UpdateView):
 
 class PhotoUploadView(CreateView):
     model = Photo
