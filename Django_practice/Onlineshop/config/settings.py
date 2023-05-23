@@ -26,6 +26,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages',
+    'shop',
 ]
 
 MIDDLEWARE = [
@@ -65,7 +67,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': 'onlineshop',
+        'USER': 'clwnssla1@bible.ac.kr',
+        'PASSWORD': 'Rla1tjd!',
+        'HOST': 'onlineshop.c3bbltkvufcr.ap-northeast-2.rds.amazonaws.com',
+        'PORT': '3306'
     }
 }
 
@@ -104,11 +110,23 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+DEFAULT_FILE_STORAGE = 'config.asset_storage.MediaStorage'
 
 pymysql.install_as_MySQLdb()
+
+AWS_ACCESS_KEY_ID = 'AKIAVDE45KW5SENLEJP2'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_REGION = 'ap-northeast-2'
+AWS_STORAGE_BUCKET_NAME = 'daniel-onlineshop'
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.%s.amazonaws.com' % (AWS_STORAGE_BUCKET_NAME, AWS_REGION)
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+}
+AWS_DEFAULT_ACL = 'public-read'
+AWS_LOCATION = 'static'
+STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
