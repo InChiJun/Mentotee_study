@@ -3,7 +3,7 @@ from .models import *
 
 def product_in_category(request, category_slug=None):
     current_category = None
-    categories = Category.object.all()
+    categories = Category.objects.all()
     products = Product.objects.filter(available_display=True)
 
     if category_slug:
