@@ -12,7 +12,7 @@ def add(request, product_id):
     form = AddProductForm(request.POST)
     if form.is_valid():
         cd = form.cleaned_data
-        cart.add(product=product, quantity=cd['quentity'], is_update=cd['is_update'])
+        cart.add(product=product, quantity=cd['quantity'], is_update=cd['is_update'])
 
     return redirect('cart:detail')
 
