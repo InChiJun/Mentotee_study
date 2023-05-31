@@ -33,7 +33,7 @@
                     {% endif %}
                </li>
                 <li class="nav-item">
-                    <a class="nav-link btn btn-outline-success" href="">Cart
+                    <a class="nav-link btn btn-outline-success" href="{% url 'cart:detail' %}">Cart
                         {% if cart|length > 0 %}
                             ${{ cart.price_total_after_discount }} with {{cart|length}} items
                         {% else %}

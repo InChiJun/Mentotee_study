@@ -21,6 +21,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'coupon',
     'cart',
     'django.contrib.sites',
     'allauth',
