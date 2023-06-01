@@ -21,6 +21,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'order',
     'coupon',
     'cart',
     'django.contrib.sites',
@@ -149,3 +150,6 @@ SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 
 CART_ID = 'cart_in_session'
+
+IAMPORT_KEY = '7465207056138853'
+IAMPORT_SECRET = 'FpMuFdjFhhNyDXperFOPcltMw9mtvNvAJh9HEfhMscDCOoCPu7XmDDAEL9K1ijDNTt8IxnrrsHBr6wVZ'
